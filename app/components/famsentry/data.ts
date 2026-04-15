@@ -14,13 +14,14 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import type { FamsentryPageId, NavigationItem } from "./types";
+import type { FooterLink, NavigationItem } from "./types";
 
 export const navigationItems: NavigationItem[] = [
-  { id: "features", label: "Features" },
-  { id: "privacy", label: "Privacy" },
-  { id: "compare", label: "Compare" },
-  { id: "faq", label: "FAQ" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "features", label: "Features", href: "/features" },
+  { id: "privacy", label: "Privacy", href: "/privacy" },
+  { id: "compare", label: "Compare", href: "/compare" },
+  { id: "faq", label: "FAQ", href: "/faq" },
 ];
 
 export const brandIcon = Shield;
@@ -240,23 +241,18 @@ export const faqItems = [
   },
 ];
 
-export const footerPlatformLinks: Array<{
-  label: string;
-  page?: FamsentryPageId;
-}> = [
-  { label: "Features", page: "features" },
-  { label: "Comparison", page: "compare" },
+export const footerPlatformLinks: FooterLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Features", href: "/features" },
+  { label: "Comparison", href: "/compare" },
   { label: "Download App" },
   { label: "Enterprise" },
 ];
 
-export const footerTrustLinks: Array<{
-  label: string;
-  page?: FamsentryPageId;
-}> = [
-  { label: "Privacy Policy", page: "privacy" },
+export const footerTrustLinks: FooterLink[] = [
+  { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service" },
-  { label: "FAQ", page: "faq" },
+  { label: "FAQ", href: "/faq" },
   { label: "Help Center" },
 ];
 

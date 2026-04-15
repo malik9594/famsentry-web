@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import FamSentryApp from "@/app/components/famsentry/famsentry-app";
+import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
+import HomePage from "@/app/components/famsentry/home-page";
 
 export const metadata: Metadata = {
   title: "FamSentry | Privacy-First Family Tracking Alternative",
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <FamSentryApp />;
+  return (
+    <FamsentrySiteShell>
+      <HomePage />
+    </FamsentrySiteShell>
+  );
 }

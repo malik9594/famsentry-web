@@ -1,45 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, User, X } from "lucide-react";
 import { brandIcon as BrandIcon, navigationItems } from "./data";
+import MobileMenu from "./mobile-menu";
 import NavLink from "./nav-link";
-import type { FamsentryPageId } from "./types";
 
-type SiteHeaderProps = {
-  currentPage: FamsentryPageId;
-  isMenuOpen: boolean;
-  onToggleMenu: () => void;
-  onSelectPage: (page: FamsentryPageId) => void;
-};
+export default function SiteHeader() {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-export default function SiteHeader({
-  currentPage,
-  isMenuOpen,
-  onToggleMenu,
-  onSelectPage,
-}: SiteHeaderProps) {
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   return (
     <nav className="sticky top-0 z-[100] border-b border-slate-200 bg-white/80 px-6 py-4 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <button
-          type="button"
-          className="flex cursor-pointer items-center gap-2"
-          onClick={() => onSelectPage("home")}
-        >
+        <Link href="/" className="flex cursor-pointer items-center gap-2">
           <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
             <BrandIcon className="h-5 w-5 text-white" />
           </div>
           <span className="text-lg font-black tracking-tight text-slate-900">
             famsentry.com
           </span>
-        </button>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {navigationItems.map((item) => (
             <NavLink
               key={item.id}
-              id={item.id}
+              href={item.href}
               label={item.label}
-              isActive={currentPage === item.id}
-              onSelect={onSelectPage}
+              isActive={pathname === item.href}
             />
           ))}
         </div>
@@ -52,12 +47,12 @@ export default function SiteHeader({
           >
             <User size={20} />
           </button>
-          <button
-            type="button"
+          <Link
+            href="/compare"
             className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-bold text-white shadow-lg shadow-blue-100 transition-all hover:bg-blue-700"
           >
             Get Started
-          </button>
+          </Link>
         </div>
 
         <button
@@ -65,11 +60,18 @@ export default function SiteHeader({
           className="p-2 text-slate-600 md:hidden"
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          onClick={onToggleMenu}
+          onClick={() => setIsMenuOpen((open) => !open)}
         >
           {isMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
+
+      {isMenuOpen ? (
+        <MobileMenu
+          pathname={pathname}
+          onNavigate={() => setIsMenuOpen(false)}
+        />
+      ) : null}
     </nav>
   );
 }

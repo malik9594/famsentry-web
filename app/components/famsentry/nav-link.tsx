@@ -1,27 +1,20 @@
-import type { FamsentryPageId } from "./types";
+import Link from "next/link";
 
 type NavLinkProps = {
-  id: FamsentryPageId;
+  href: string;
   label: string;
   isActive: boolean;
-  onSelect: (page: FamsentryPageId) => void;
 };
 
-export default function NavLink({
-  id,
-  label,
-  isActive,
-  onSelect,
-}: NavLinkProps) {
+export default function NavLink({ href, label, isActive }: NavLinkProps) {
   return (
-    <button
-      type="button"
-      onClick={() => onSelect(id)}
+    <Link
+      href={href}
       className={`text-sm font-medium transition-colors ${
         isActive ? "text-blue-600" : "text-slate-600 hover:text-blue-600"
       }`}
     >
       {label}
-    </button>
+    </Link>
   );
 }

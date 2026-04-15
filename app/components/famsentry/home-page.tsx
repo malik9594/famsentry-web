@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MapPin, Shield, User } from "lucide-react";
 import {
   bottomActionIcons,
@@ -8,14 +9,9 @@ import {
 } from "./data";
 import FeatureCard from "./feature-card";
 import SectionHeading from "./section-heading";
-import type { FamsentryPageId } from "./types";
 import styles from "./home-page.module.css";
 
-type HomePageProps = {
-  onSelectPage: (page: FamsentryPageId) => void;
-};
-
-export default function HomePage({ onSelectPage }: HomePageProps) {
+export default function HomePage() {
   return (
     <>
       <section className="relative mx-auto max-w-7xl overflow-hidden px-6 pt-12 pb-20 md:pt-24 md:pb-32">
@@ -40,19 +36,18 @@ export default function HomePage({ onSelectPage }: HomePageProps) {
               className={`${styles.fadeUp} flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start`}
               style={{ animationDelay: "0.3s" }}
             >
-              <button
-                type="button"
-                className="w-full rounded-xl bg-blue-600 px-10 py-4 text-lg font-bold text-white shadow-xl shadow-blue-200 transition-all hover:-translate-y-1 hover:bg-blue-700 sm:w-auto"
+              <Link
+                href="/compare"
+                className="w-full rounded-xl bg-blue-600 px-10 py-4 text-center text-lg font-bold text-white shadow-xl shadow-blue-200 transition-all hover:-translate-y-1 hover:bg-blue-700 sm:w-auto"
               >
                 Start Free
-              </button>
-              <button
-                type="button"
-                onClick={() => onSelectPage("features")}
-                className="w-full rounded-xl border border-slate-200 bg-white px-10 py-4 text-lg font-bold text-slate-800 shadow-sm transition-all hover:-translate-y-1 hover:bg-slate-50 sm:w-auto"
+              </Link>
+              <Link
+                href="/features"
+                className="w-full rounded-xl border border-slate-200 bg-white px-10 py-4 text-center text-lg font-bold text-slate-800 shadow-sm transition-all hover:-translate-y-1 hover:bg-slate-50 sm:w-auto"
               >
                 See How It Works
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -314,13 +309,12 @@ export default function HomePage({ onSelectPage }: HomePageProps) {
             Start using FamSentry today and move away from traditional tracking
             apps that monetize your privacy.
           </p>
-          <button
-            type="button"
-            onClick={() => onSelectPage("compare")}
+          <Link
+            href="/compare"
             className="rounded-2xl bg-white px-12 py-5 text-xl font-black text-blue-600 shadow-2xl transition-transform hover:scale-105 active:scale-95"
           >
             Get Started Now
-          </button>
+          </Link>
         </div>
       </section>
     </>
