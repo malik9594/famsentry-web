@@ -2,7 +2,7 @@ import { faqItems } from "./data";
 
 export default function FAQPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
       <h1 className="mb-12 text-4xl font-black text-slate-900 md:text-6xl">
         Frequently Asked Questions
       </h1>

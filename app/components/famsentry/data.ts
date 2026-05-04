@@ -19,8 +19,8 @@ import type { FooterLink, NavigationItem } from "./types";
 export const navigationItems: NavigationItem[] = [
   { id: "home", label: "Home", href: "/" },
   { id: "features", label: "Features", href: "/features" },
+  { id: "compare", label: "Life360 Alternative", href: "/life360-alternative" },
   { id: "privacy", label: "Privacy", href: "/privacy" },
-  { id: "compare", label: "Compare", href: "/compare" },
   { id: "faq", label: "FAQ", href: "/faq" },
 ];
 
@@ -208,6 +208,29 @@ export const comparisonRows: Array<{
   },
 ];
 
+export const sovereignComparisonRows = [
+  {
+    feature: "Data Sovereignty",
+    famsentry: "Proprietary Mapifyit Engine",
+    mainstream: "Shared 3rd Party APIs",
+  },
+  {
+    feature: "Privacy Model",
+    famsentry: "Zero-Knowledge Encryption",
+    mainstream: "Ad-Supported / Data Brokering",
+  },
+  {
+    feature: "History Archive",
+    famsentry: "365 Days",
+    mainstream: "2–30 Days",
+  },
+  {
+    feature: "Offline Reliability",
+    famsentry: "Ghost-Sync (Local Cache)",
+    mainstream: "Requires Constant Data",
+  },
+];
+
 export const faqItems = [
   {
     question: "Is FamSentry better than Life360?",
@@ -239,21 +262,37 @@ export const faqItems = [
     answer:
       "Yes, all history is encrypted and accessible only to you and your authorized family members.",
   },
+  {
+    question: "What is the best private Life360 alternative for 2026?",
+    answer:
+      "FamSentry is the leading private alternative, offering end-to-end encryption and a proprietary map engine that prevents location data from being sold to third parties.",
+  },
+  {
+    question: "Can I track my child's phone offline?",
+    answer:
+      "Yes. FamSentry’s Ghost-Sync technology caches coordinates locally when signal is lost and updates your dashboard the moment the phone is back online.",
+  },
+  {
+    question: "How long does FamSentry store location history?",
+    answer:
+      "The FamSentry Diamond Package stores a full 365 days of movement history, all protected by zero-knowledge encryption.",
+  },
 ];
 
 export const footerPlatformLinks: FooterLink[] = [
   { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
-  { label: "Comparison", href: "/compare" },
-  { label: "Download App" },
-  { label: "Enterprise" },
+  { label: "Crash Detection", href: "/features/crash-detection" },
+  { label: "Driving Safety", href: "/features/driving-safety" },
+  { label: "Offline Tracking", href: "/features/offline-tracking" },
+  { label: "Diamond Plan", href: "/plans/diamond" },
 ];
 
 export const footerTrustLinks: FooterLink[] = [
+  { label: "Life360 Alternative", href: "/life360-alternative" },
   { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service" },
   { label: "FAQ", href: "/faq" },
-  { label: "Help Center" },
+  { label: "Terms of Service" },
 ];
 
 export const comparisonCellIcons = {

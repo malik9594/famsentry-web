@@ -14,9 +14,9 @@ import styles from "./home-page.module.css";
 export default function HomePage() {
   return (
     <>
-      <section className="relative mx-auto max-w-7xl overflow-hidden px-6 pt-12 pb-20 md:pt-24 md:pb-32">
+      <section className="relative mx-auto max-w-7xl overflow-hidden px-6 pt-1 pb-2 md:pt-1 md:pb-10">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="z-10 text-center md:text-left">
+          <div className="z-5 text-center md:text-left">
             <h1
               className={`${styles.fadeUp} mb-6 text-5xl leading-[1.1] font-extrabold tracking-tight text-[#0f172a] md:text-7xl`}
               style={{ animationDelay: "0.1s" }}
@@ -268,6 +268,14 @@ export default function HomePage() {
               <p className="mt-8 text-lg font-semibold italic text-blue-400">
                 You stay in control of your family&apos;s location data at all times.
               </p>
+              <div className="mt-8">
+                <Link
+                  href="/life360-alternative"
+                  className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+                >
+                  View Life360 Comparison
+                </Link>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

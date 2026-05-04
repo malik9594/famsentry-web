@@ -2,7 +2,7 @@ import { privacySections } from "./data";
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+    <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
       <h1 className="mb-8 text-4xl font-black md:text-6xl">
         Privacy-First Location Tracking
       </h1>
