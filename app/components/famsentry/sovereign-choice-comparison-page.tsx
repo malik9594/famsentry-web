@@ -2,7 +2,7 @@ import { Shield, Lock, History, SignalHigh, CheckCircle2 } from "lucide-react";
 import { sovereignComparisonRows } from "./data";
 import SectionHeading from "./section-heading";
 
-export default function Life360AlternativePage() {
+export default function SovereignChoiceComparisonPage() {
   return (
     <div className="relative overflow-hidden bg-slate-50 pt-16 md:pt-24">
       {/* Background decoration */}

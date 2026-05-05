@@ -13,13 +13,17 @@ import {
   Users,
   X,
   Zap,
+  Network,
+  Radar,
+  Battery,
+
 } from "lucide-react";
 import type { FooterLink, NavigationItem } from "./types";
 
 export const navigationItems: NavigationItem[] = [
   { id: "home", label: "Home", href: "/" },
   { id: "features", label: "Features", href: "/features" },
-  { id: "compare", label: "Life360 Alternative", href: "/life360-alternative" },
+  { id: "compare", label: "Sovereign Choice", href: "/sovereign-choice" },
   { id: "privacy", label: "Privacy", href: "/privacy" },
   { id: "faq", label: "FAQ", href: "/faq" },
 ];
@@ -48,43 +52,61 @@ export const featureCards: Array<{
   description: string;
   badge?: string;
 }> = [
-  {
-    icon: MapPin,
-    title: "Real-time Tracking",
-    description: "High accuracy location tracking with minimal battery usage.",
-    badge: "Precise",
-  },
-  {
-    icon: Bell,
-    title: "Smart Geofencing",
-    description: "Instant alerts for home, school, and custom zones.",
-    badge: "Smart",
-  },
-  {
-    icon: AlertTriangle,
-    title: "SOS Emergency",
-    description: "Instant location sharing to trusted members in distress.",
-    badge: "Urgent",
-  },
-  {
-    icon: BarChart3,
-    title: "Driving Insights",
-    description: "Monitor speed and behavior patterns for safer journeys.",
-    badge: "Insight",
-  },
-  {
-    icon: Navigation,
-    title: "Location History",
-    description: "Secure timeline of movements with private storage.",
-    badge: "Secure",
-  },
-  {
-    icon: Users,
-    title: "Private Groups",
-    description: "Complete control over who can see your location.",
-    badge: "Private",
-  },
-];
+    {
+      icon: MapPin,
+      title: "Real-time Tracking",
+      description: "High accuracy location tracking with minimal battery usage.",
+      badge: "Precise",
+    },
+    {
+      icon: Bell,
+      title: "Smart Geofencing",
+      description: "Instant alerts for home, school, and custom zones.",
+      badge: "Smart",
+    },
+    {
+      icon: AlertTriangle,
+      title: "SOS Emergency",
+      description: "Instant location sharing to trusted members in distress.",
+      badge: "Urgent",
+    },
+    {
+      icon: BarChart3,
+      title: "Driving Insights",
+      description: "Monitor speed and behavior patterns for safer journeys.",
+      badge: "Insight",
+    },
+    {
+      icon: Navigation,
+      title: "Location History",
+      description: "Secure timeline of movements with private storage.",
+      badge: "Secure",
+    },
+    {
+      icon: Users,
+      title: "Private Groups",
+      description: "Complete control over who can see your location.",
+      badge: "Private",
+    },
+    {
+      icon: Network,
+      title: "Offline Mode",
+      description: "Access critical safety maps and last-known locations without signal.",
+      badge: "Secure",
+    },
+    {
+      icon: Battery,
+      title: "Battery Optimized",
+      description: "Military-grade tracking algorithms that won't drain your device.",
+      badge: "Private",
+    },
+    {
+      icon: Radar,
+      title: "Device Health",
+      description: "Monitor battery levels and connectivity status for all group members.",
+      badge: "Private",
+    },
+  ];
 
 export const privacySections = [
   {
@@ -115,18 +137,28 @@ export const valuePropCards: Array<{
   description: string;
   className?: string;
 }> = [
-  {
-    icon: Lock,
-    title: "Independent",
-    description: "Our own mapping stack.",
-  },
-  {
-    icon: User,
-    title: "No Ads",
-    description: "Zero data selling.",
-    className: "mt-4",
-  },
-];
+    {
+      icon: Lock,
+      title: "Independent",
+      description: "Our own mapping stack.",
+    },
+    {
+      icon: User,
+      title: "No Ads",
+      description: "Zero data selling.",
+      className: "",
+    },
+    {
+      icon: Network,
+      title: "Full-Stack Privacy",
+      description: "From map tiles to routing servers, we own the entire infrastructure stack."
+    },
+    {
+      icon: Radar,
+      title: "Low Latency",
+      description: "Fast, water smooth updates powered by dedicated high-performance hardware.",
+    },
+  ];
 
 export const comparisonCards = [
   {
@@ -171,42 +203,42 @@ export const comparisonRows: Array<{
   googleMaps: boolean;
   findMy: boolean;
 }> = [
-  {
-    feature: "Ad-Free Experience",
-    famsentry: true,
-    life360: false,
-    googleMaps: false,
-    findMy: true,
-  },
-  {
-    feature: "Independent Mapping",
-    famsentry: true,
-    life360: false,
-    googleMaps: false,
-    findMy: false,
-  },
-  {
-    feature: "No Data Monetization",
-    famsentry: true,
-    life360: false,
-    googleMaps: false,
-    findMy: true,
-  },
-  {
-    feature: "Enterprise Options",
-    famsentry: true,
-    life360: false,
-    googleMaps: false,
-    findMy: false,
-  },
-  {
-    feature: "Cross-Platform",
-    famsentry: true,
-    life360: true,
-    googleMaps: true,
-    findMy: false,
-  },
-];
+    {
+      feature: "Ad-Free Experience",
+      famsentry: true,
+      life360: false,
+      googleMaps: false,
+      findMy: true,
+    },
+    {
+      feature: "Independent Mapping",
+      famsentry: true,
+      life360: false,
+      googleMaps: false,
+      findMy: false,
+    },
+    {
+      feature: "No Data Monetization",
+      famsentry: true,
+      life360: false,
+      googleMaps: false,
+      findMy: true,
+    },
+    {
+      feature: "Enterprise Options",
+      famsentry: true,
+      life360: false,
+      googleMaps: false,
+      findMy: false,
+    },
+    {
+      feature: "Cross-Platform",
+      famsentry: true,
+      life360: true,
+      googleMaps: true,
+      findMy: false,
+    },
+  ];
 
 export const sovereignComparisonRows = [
   {
@@ -289,7 +321,7 @@ export const footerPlatformLinks: FooterLink[] = [
 ];
 
 export const footerTrustLinks: FooterLink[] = [
-  { label: "Life360 Alternative", href: "/life360-alternative" },
+  { label: "Sovereign Choice", href: "/sovereign-choice" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "FAQ", href: "/faq" },
   { label: "Terms of Service" },

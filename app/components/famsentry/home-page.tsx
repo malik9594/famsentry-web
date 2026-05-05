@@ -28,9 +28,7 @@ export default function HomePage() {
               className={`${styles.fadeUp} mx-auto mb-10 max-w-lg text-lg leading-relaxed text-slate-600 md:mx-0 md:text-xl`}
               style={{ animationDelay: "0.2s" }}
             >
-              FamSentry is a privacy-first family safety platform that gives you
-              real-time location, alerts, and tracking without relying on
-              third-party map providers or ad-based data systems.
+              FamSentry is a high-performance family safety ecosystem. We deliver real-time location intelligence and instant alerts through a private infrastructure, eliminating reliance on third-party map providers and data-mining ad systems. Your family's movement stays your business.
             </p>
             <div
               className={`${styles.fadeUp} flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start`}
@@ -246,14 +244,13 @@ export default function HomePage() {
           <div className="grid items-center gap-16 md:grid-cols-2">
             <div>
               <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-                A Smarter Alternative to Traditional Tracking Apps
+                A Sovereign Standard for Family Safety
               </h2>
               <p className="mb-8 text-lg leading-relaxed text-slate-400">
-                Most apps like{" "}
+                While legacy platforms like{" "}
                 <span className="font-medium text-white">Life360</span> and{" "}
                 <span className="font-medium text-white">Google Maps</span>{" "}
-                depend on third-party infrastructure and ad-driven models.
-                FamSentry is built differently.
+                are tethered to third-party map providers and data-mining models, FamSentry is engineered for absolute independence. By hosting our own mapping infrastructure, we ensure your family’s movement remains private, encrypted, and entirely off the grid.
               </p>
               <ul className="space-y-4">
                 {homeValuePoints.map((item) => (
@@ -270,10 +267,10 @@ export default function HomePage() {
               </p>
               <div className="mt-8">
                 <Link
-                  href="/life360-alternative"
+                  href="/sovereign-choice"
                   className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
                 >
-                  View Life360 Comparison
+                  View Sovereign Choice
                 </Link>
               </div>
             </div>
@@ -282,9 +279,8 @@ export default function HomePage() {
               {valuePropCards.map(({ icon: Icon, title, description, className }) => (
                 <div
                   key={title}
-                  className={`rounded-2xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm transition-colors hover:border-blue-500/50 ${
-                    className ?? ""
-                  }`}
+                  className={`rounded-2xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm transition-colors hover:border-blue-500/50 ${className ?? ""
+                    }`}
                 >
                   <Icon className="mb-3 text-blue-400" size={32} />
                   <h4 className="mb-1 font-bold">{title}</h4>
