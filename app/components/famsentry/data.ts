@@ -24,8 +24,10 @@ export const navigationItems: NavigationItem[] = [
   { id: "home", label: "Home", href: "/" },
   { id: "features", label: "Features", href: "/features" },
   { id: "compare", label: "Sovereign Choice", href: "/sovereign-choice" },
+  { id: "pricing", label: "Pricing", href: "/pricing" },
   { id: "privacy", label: "Privacy", href: "/privacy" },
   { id: "faq", label: "FAQ", href: "/faq" },
+  { id: "contact", label: "Contact Us", href: "/contact-us" },
 ];
 
 export const brandIcon = Shield;
@@ -318,6 +320,7 @@ export const footerPlatformLinks: FooterLink[] = [
   { label: "Driving Safety", href: "/features/driving-safety" },
   { label: "Offline Tracking", href: "/features/offline-tracking" },
   { label: "Diamond Plan", href: "/plans/diamond" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export const footerTrustLinks: FooterLink[] = [
@@ -325,6 +328,7 @@ export const footerTrustLinks: FooterLink[] = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "FAQ", href: "/faq" },
   { label: "Terms of Service" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 export const comparisonCellIcons = {
