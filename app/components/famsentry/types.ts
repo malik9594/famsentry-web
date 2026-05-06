@@ -3,6 +3,8 @@ export type FamsentryPageId =
   | "features"
   | "privacy"
   | "compare"
+  | "pricing"
+  | "contact"
   | "faq";
 
 export type NavigationItem = {
