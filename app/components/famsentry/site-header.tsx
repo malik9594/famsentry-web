@@ -17,14 +17,14 @@ export default function SiteHeader() {
   }, [pathname]);
 
   return (
-    <nav className="sticky top-0 z-[100] border-b border-slate-200 bg-white/80 px-6 py-4 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
+    <nav className={`sticky top-0 z-[100] border-b border-slate-200 px-6 py-4 backdrop-blur-md transition-colors ${isMenuOpen ? "bg-white" : "bg-white/80"}`}>
+      <div className="relative z-[110] mx-auto flex max-w-7xl items-center justify-between">
         <Link href="/" className="flex cursor-pointer items-center gap-2">
           <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
             <BrandIcon className="h-5 w-5 text-white" />
           </div>
           <span className="text-lg font-black tracking-tight text-slate-900">
-            famsentry.com
+            famsentry
           </span>
         </Link>
 

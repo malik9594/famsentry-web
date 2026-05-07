@@ -11,7 +11,7 @@ type MobileMenuProps = {
 export default function MobileMenu({ pathname, onNavigate }: MobileMenuProps) {
   return (
     <div className="fixed inset-0 z-[90] bg-white p-6 pt-24 md:hidden">
-      <div className="flex flex-col gap-6 text-2xl font-bold text-slate-900">
+      <div className="flex flex-col gap-6 text-2xl font-bold text-slate-900 bg-white">
         {navigationItems.map((item) => (
           <Link
             key={item.id}
@@ -22,11 +22,11 @@ export default function MobileMenu({ pathname, onNavigate }: MobileMenuProps) {
             {item.label}
           </Link>
         ))}
-        <hr className="my-4 border-slate-100" />
+        <hr className="my-1 border-slate-100" />
         <Link
           href="/compare"
           onClick={onNavigate}
-          className="rounded-2xl bg-blue-600 py-4 text-center text-white"
+          className="rounded-2xl bg-blue-600 py-4 mb-1 text-center text-white"
         >
           Get Started
         </Link>
