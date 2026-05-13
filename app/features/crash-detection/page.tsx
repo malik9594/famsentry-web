@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
 import { Activity, Bell, MapPin, ShieldAlert } from "lucide-react";
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "ImpactGuard™ | Crash Detection & SOS | FamSentry",
   description: "FamSentry's ImpactGuard™ uses advanced sensor-fusion technology to detect vehicle collisions and trigger automatic SOS with live audio and video.",

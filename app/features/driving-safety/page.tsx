@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
 import { BarChart3, Clock, Gauge, PhoneOff } from "lucide-react";
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "DriveSentry™ | Driving Safety Analytics | FamSentry",
   description: "Monitor driving behavior with DriveSentry™. Real-time telemetry, hard braking alerts, and weekly safety scores without compromising location privacy.",

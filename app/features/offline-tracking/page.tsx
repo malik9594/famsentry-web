@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
 import { CloudSync, Database, SignalLow, Zap } from "lucide-react";
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Ghost-Sync | Offline Location Tracking | FamSentry",
   description: "Ghost-Sync solves the 'Dead Zone' problem by logging encrypted GPS coordinates locally and syncing instantly upon signal recovery.",
