@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
 import PricingPage from "@/app/components/famsentry/pricing-page";
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Pricing | FamSentry Plans",
   description:

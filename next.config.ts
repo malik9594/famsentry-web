@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Cache RSC payloads and static assets so Safari and other browsers
-  // don't re-fetch them on every navigation.
+  // Disable Strict Mode to prevent double RSC prefetch invocations in dev.
+  // (Strict Mode intentionally double-renders effects — this causes the same
+  //  ?_rsc=xxx request to appear 7× in local network tab even though it's
+  //  fine in production. No effect on prod behaviour.)
+  reactStrictMode: false,
+
   async headers() {
     return [
       {

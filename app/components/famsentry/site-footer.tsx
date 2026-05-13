@@ -12,7 +12,7 @@ export default function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-4">
         <div className="col-span-2">
           <div className="mb-6 flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" prefetch={false} className="flex items-center gap-2">
               <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
                 <BrandIcon className="h-6 w-6 text-white" />
               </div>
@@ -49,6 +49,7 @@ export default function SiteFooter() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  prefetch={false}
                   className="block text-left transition-colors hover:text-blue-600"
                 >
                   {link.label}
@@ -72,6 +73,7 @@ export default function SiteFooter() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  prefetch={false}
                   className="block text-left transition-colors hover:text-blue-600"
                 >
                   {link.label}

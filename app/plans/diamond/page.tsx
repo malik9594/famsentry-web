@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import FamsentrySiteShell from "@/app/components/famsentry/famsentry-site-shell";
 import { Check, Crown, History, Server, Target } from "lucide-react";
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Diamond Family Package | Premium Safety Archive | FamSentry",
   description: "The ultimate safety archive for high-security families. 1-year location history, priority server routing, and unlimited smart geofencing.",

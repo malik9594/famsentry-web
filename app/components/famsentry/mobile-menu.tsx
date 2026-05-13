@@ -16,6 +16,7 @@ export default function MobileMenu({ pathname, onNavigate }: MobileMenuProps) {
           <Link
             key={item.id}
             href={item.href}
+            prefetch={false}
             onClick={onNavigate}
             className={pathname === item.href ? "text-blue-600" : ""}
           >
@@ -25,6 +26,7 @@ export default function MobileMenu({ pathname, onNavigate }: MobileMenuProps) {
         <hr className="my-1 border-slate-100" />
         <Link
           href="/compare"
+          prefetch={false}
           onClick={onNavigate}
           className="rounded-2xl bg-blue-600 py-4 mb-1 text-center text-white"
         >
