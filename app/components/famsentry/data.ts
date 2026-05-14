@@ -112,26 +112,42 @@ export const featureCards: Array<{
 
 export const privacySections = [
   {
-    title: "No Third-Party Mapping Dependency",
+    title: "Independent Mapping Infrastructure",
     description:
-      "All location processing is handled within a controlled infrastructure. We do not pipe your coordinates through big tech APIs that log your behavior.",
+      "FamSentry processes all location data within its own private infrastructure. We never rely on third-party mapping APIs that could track or log your movements.",
   },
   {
     title: "No Data Monetization",
     description:
-      "We do not sell, share, or analyze user data for advertising. Our business model is based on subscriptions, not your personal life.",
+      "Your personal data is never sold, shared, or used for advertising. FamSentry operates on a subscription-based model, ensuring privacy is at the core of our business.",
   },
   {
-    title: "Controlled Data Environment",
+    title: "User-Controlled Access",
     description:
-      "Your location data is only accessible to you and your approved group. Not even our engineers can view your real-time paths without permission.",
+      "Only you and the family members or groups you authorize can access your location data. Even FamSentry engineers cannot view your paths without explicit consent.",
   },
   {
-    title: "Enterprise-Level Deployment",
+    title: "Zero-Knowledge Encryption",
     description:
-      "Optional on-premise deployment ensures maximum control for organizations and families requiring extreme privacy.",
+      "All stored location history is protected with zero-knowledge encryption, meaning only you hold the keys to decrypt your data.",
+  },
+  {
+    title: "Enterprise-Grade Privacy Options",
+    description:
+      "Organizations and families requiring maximum control can opt for on-premise deployment, ensuring complete ownership of their data environment.",
+  },
+  {
+    title: "Regulatory Compliance",
+    description:
+      "FamSentry adheres to global privacy standards, including GDPR and CCPA, giving you confidence that your data is handled responsibly.",
+  },
+  {
+    title: "Transparency & Accountability",
+    description:
+      "We provide clear privacy policies and regular audits to ensure our practices remain aligned with our promise of protecting your personal information.",
   },
 ];
+
 
 export const valuePropCards: Array<{
   icon: LucideIcon;
