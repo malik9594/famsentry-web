@@ -19,7 +19,7 @@ export default function SiteHeader() {
   return (
     <nav className={`sticky top-0 z-[100] border-b border-slate-200 px-6 py-4 backdrop-blur-md transition-colors ${isMenuOpen ? "bg-white" : "bg-white/80"}`}>
       <div className="relative z-[110] mx-auto flex max-w-7xl items-center justify-between">
-        <Link href="/" prefetch={true} className="flex cursor-pointer items-center gap-2">
+        <Link href="/" prefetch={false} className="flex cursor-pointer items-center gap-2">
           <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
             <BrandIcon className="h-5 w-5 text-white" />
           </div>
@@ -49,7 +49,7 @@ export default function SiteHeader() {
           </button>
           <Link
             href="/compare"
-            prefetch={true}
+            prefetch={false}
             className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-bold text-white shadow-lg shadow-blue-100 transition-all hover:bg-blue-700"
           >
             Get Started

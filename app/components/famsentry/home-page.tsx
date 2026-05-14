@@ -36,12 +36,14 @@ export default function HomePage() {
             >
               <Link
                 href="/compare"
+                prefetch={false}
                 className="w-full rounded-xl bg-blue-600 px-10 py-4 text-center text-lg font-bold text-white shadow-xl shadow-blue-200 transition-all hover:-translate-y-1 hover:bg-blue-700 sm:w-auto"
               >
                 Start Free
               </Link>
               <Link
                 href="/features"
+                prefetch={false}
                 className="w-full rounded-xl border border-slate-200 bg-white px-10 py-4 text-center text-lg font-bold text-slate-800 shadow-sm transition-all hover:-translate-y-1 hover:bg-slate-50 sm:w-auto"
               >
                 See How It Works
@@ -268,6 +270,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <Link
                   href="/sovereign-choice"
+                  prefetch={false}
                   className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
                 >
                   View Sovereign Choice
@@ -315,6 +318,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/compare"
+            prefetch={false}
             className="rounded-2xl bg-white px-12 py-5 text-xl font-black text-blue-600 shadow-2xl transition-transform hover:scale-105 active:scale-95"
           >
             Get Started Now

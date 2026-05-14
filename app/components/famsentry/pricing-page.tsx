@@ -52,6 +52,7 @@ const PricingCard = ({ title, price, highlightedText, description, features, hig
         <footer className="mt-auto relative z-10">
             <Link
                 href={title === 'Diamond' ? '/plans/diamond' : '#'}
+                prefetch={false}
                 className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group/btn ${highlighted ? 'bg-white text-blue-600 hover:bg-slate-100 shadow-lg' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}
                 aria-label={`Get started with the ${title} plan`}
             >
@@ -129,7 +130,7 @@ export default function PricingPage() {
                         <div className="relative z-10 max-w-3xl mx-auto">
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">Need a custom plan for a larger organization?</h2>
                             <p className="text-lg text-slate-400 mb-10">We offer specialized solutions for extended families, groups, and enterprises that require private location infrastructure.</p>
-                            <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-slate-900 font-extrabold rounded-2xl hover:bg-slate-100 hover:scale-105 active:scale-95 transition-all shadow-xl">
+                            <Link href="/contact-us" prefetch={false} className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-slate-900 font-extrabold rounded-2xl hover:bg-slate-100 hover:scale-105 active:scale-95 transition-all shadow-xl">
                                 Contact Us <ArrowRight className="w-5 h-5" />
                             </Link>
                         </div>

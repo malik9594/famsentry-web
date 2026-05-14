@@ -7,7 +7,7 @@ type NavLinkProps = {
   prefetch?: boolean;
 };
 
-export default function NavLink({ href, label, isActive, prefetch = true }: NavLinkProps) {
+export default function NavLink({ href, label, isActive, prefetch = false }: NavLinkProps) {
   return (
     <Link
       href={href}
