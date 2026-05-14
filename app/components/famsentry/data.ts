@@ -267,51 +267,52 @@ export const sovereignComparisonRows = [
 
 export const faqItems = [
   {
-    question: "Is FamSentry better than Life360?",
+    question: "What is FamSentry?",
     answer:
-      "FamSentry focuses on privacy and infrastructure control rather than ad-driven tracking models. We do not sell your data.",
+      "FamSentry is a private family tracking app that allows parents or administrators to monitor family members in real time with strong privacy protections.",
   },
   {
     question: "Does FamSentry use Google Maps?",
     answer:
-      "No. FamSentry uses an independent mapping infrastructure to ensure your location behavior is not tracked by third-party providers.",
+      "No. FamSentry operates on its own independent mapping infrastructure, ensuring your location data is never shared with third-party providers.",
   },
   {
-    question: "Is my data sold?",
+    question: "Is my data safe?",
     answer:
-      "No. Data is never sold or shared. Our revenue comes purely from memberships.",
+      "Yes. Your data is never sold or shared. FamSentry’s revenue comes solely from memberships, not advertising.",
   },
   {
-    question: "Can I track my family in real-time?",
+    question: "Can I track my family in real time?",
     answer:
-      "Yes, with high accuracy and low battery usage across both Android and iOS devices.",
+      "Yes. FamSentry provides accurate, real-time tracking with minimal battery usage across Android and iOS devices.",
   },
   {
     question: "Can businesses use FamSentry?",
     answer:
-      "Yes, we offer enterprise versions for fleet tracking and workforce safety with private deployment options.",
+      "Yes. We provide enterprise solutions for fleet tracking and workforce safety, with options for private deployment.",
   },
   {
     question: "Is location history secure?",
     answer:
-      "Yes, all history is encrypted and accessible only to you and your authorized family members.",
+      "Yes. All location history is encrypted and accessible only to you and your authorized family members.",
   },
   {
-    question: "What is the best private Life360 alternative for 2026?",
+    question: "Does FamSentry work offline?",
     answer:
-      "FamSentry is the leading private alternative, offering end-to-end encryption and a proprietary map engine that prevents location data from being sold to third parties.",
+      "Yes. With Ghost-Sync technology, FamSentry caches coordinates locally when signal is lost and updates your dashboard once the device reconnects.",
   },
   {
-    question: "Can I track my child's phone offline?",
+    question: "How long is location history stored?",
     answer:
-      "Yes. FamSentry’s Ghost-Sync technology caches coordinates locally when signal is lost and updates your dashboard the moment the phone is back online.",
+      "The FamSentry Diamond Package stores up to 365 days of movement history, protected by zero-knowledge encryption.",
   },
   {
-    question: "How long does FamSentry store location history?",
+    question: "What makes FamSentry unique?",
     answer:
-      "The FamSentry Diamond Package stores a full 365 days of movement history, all protected by zero-knowledge encryption.",
+      "FamSentry combines end-to-end encryption, independent mapping, and private infrastructure to deliver a secure, ad-free family tracking experience.",
   },
 ];
+
 
 export const footerPlatformLinks: FooterLink[] = [
   { label: "Home", href: "/" },
