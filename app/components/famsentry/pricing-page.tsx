@@ -90,15 +90,17 @@ export default function PricingPage() {
 
                 <section className="mb-20" aria-labelledby="pricing-plans-heading">
                     <h2 id="pricing-plans-heading" className="sr-only">Our Pricing Plans</h2>
-                    <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                        <PricingCard
+                    {/* <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"> */}
+                    <div className="grid md:grid-cols-1 justify-items-center gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+                        {/* <PricingCard
                             title="Basic"
                             price="$0"
                             highlightedText="Essential Family Safety"
                             description="Perfect for keeping track of your loved ones."
                             icon={Navigation}
                             features={["Real-time Location Sharing", "2 Days Location History", "2 Safe Zones (Geofences)", "SOS Emergency Alerts", "Battery Monitoring"]}
-                        />
+                        /> */}
                         <PricingCard
                             title="Premium"
                             price="$9.99"
@@ -107,7 +109,7 @@ export default function PricingPage() {
                             icon={Target}
                             features={["30 Days Location History", "Unlimited Safe Zones", "Crime & Safety Reports", "Basic Driving Analytics", "Individual Speed Alerts", "Priority Sync"]}
                         />
-                        <PricingCard
+                        {/* <PricingCard
                             title="Diamond"
                             price="$19.99"
                             highlightedText="Ultimate Protection"
@@ -115,7 +117,7 @@ export default function PricingPage() {
                             icon={Crown}
                             highlighted={true}
                             features={["365 Days Location History", "ImpactGuard™ Crash Detection", "DriveSentry™ Advanced Analytics", "Ghost-Sync Offline Tracking", "Priority Server Routing", "24/7 Priority Support"]}
-                        />
+                        /> */}
                     </div>
                 </section>
 
