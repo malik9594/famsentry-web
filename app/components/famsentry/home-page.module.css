@@ -1,14 +1,16 @@
 .float {
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .drift {
   animation: drift 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .fadeUp {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
+  animation: fadeInUp 0.8s ease-out both;
+  will-change: opacity, transform;
 }
 
 .pathOne {

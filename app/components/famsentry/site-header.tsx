@@ -17,7 +17,7 @@ export default function SiteHeader() {
   }, [pathname]);
 
   return (
-    <nav className={`sticky top-0 z-[100] border-b border-slate-200 px-6 py-4 backdrop-blur-md transition-colors ${isMenuOpen ? "bg-white" : "bg-white/80"}`}>
+    <nav className={`sticky top-0 z-[100] border-b border-slate-200 px-6 py-4 transition-colors ${isMenuOpen ? "bg-white" : "bg-white/95"}`} style={{ boxShadow: "0 1px 0 0 rgba(226,232,240,0.8)" }}>
       <div className="relative z-[110] mx-auto flex max-w-7xl items-center justify-between">
         <Link href="/" prefetch={false} className="flex cursor-pointer items-center gap-2">
           <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">

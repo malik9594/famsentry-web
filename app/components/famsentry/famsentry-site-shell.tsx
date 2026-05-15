@@ -10,11 +10,13 @@ export default function FamsentrySiteShell({
   children,
 }: FamsentrySiteShellProps) {
   return (
-    <div className="min-h-screen bg-[#f8fafc] font-sans text-[#1e293b] selection:bg-blue-100 selection:text-blue-900">
-      <div className="pointer-events-none fixed inset-0 opacity-40">
-        <div className="absolute top-0 right-0 h-[500px] w-[500px] translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 h-[500px] w-[500px] -translate-x-1/2 translate-y-1/2 rounded-full bg-slate-200 blur-[120px]" />
-      </div>
+    <div
+      className="min-h-screen font-sans text-[#1e293b] selection:bg-blue-100 selection:text-blue-900"
+      style={{
+        background:
+          "radial-gradient(ellipse 60% 40% at 100% 0%, rgba(219,234,254,0.55) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 0% 100%, rgba(226,232,240,0.45) 0%, transparent 70%), #f8fafc",
+      }}
+    >
 
       <div className="relative z-10">
         <SiteHeader />

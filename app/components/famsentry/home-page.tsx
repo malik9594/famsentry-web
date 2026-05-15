@@ -95,7 +95,7 @@ export default function HomePage() {
               className={`${styles.float} absolute top-[10%] right-[10%] z-40`}
               style={{ animationDelay: "0.5s" }}
             >
-              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-white bg-white/95 p-3 shadow-xl backdrop-blur-sm">
+              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500 text-[10px] font-bold text-white">
                   SIS
                 </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
               className={`${styles.float} absolute top-[25%] left-[5%] z-40`}
               style={{ animationDelay: "1.2s" }}
             >
-              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-white bg-white/95 p-3 shadow-xl backdrop-blur-sm">
+              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
                   DAD
                 </div>
@@ -168,21 +168,24 @@ export default function HomePage() {
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                       <div className="relative">
-                        <div className="absolute inset-0 animate-ping rounded-full bg-blue-500 opacity-20" />
+                        <div
+                          className="absolute inset-0 rounded-full bg-blue-500/20"
+                          style={{ boxShadow: "0 0 0 8px rgba(59,130,246,0.12), 0 0 0 16px rgba(59,130,246,0.06)" }}
+                        />
                         <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 shadow-lg">
                           <User size={24} />
                         </div>
                       </div>
                     </div>
 
-                    <div className="absolute top-1/4 right-1/4 animate-bounce">
+                    <div className="absolute top-1/4 right-1/4">
                       <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-red-500 text-white shadow-md">
                         <MapPin size={16} />
                       </div>
                     </div>
                   </div>
 
-                  <div className="absolute bottom-0 w-full border-t border-slate-100 bg-white/90 p-4 backdrop-blur-md">
+                  <div className="absolute bottom-0 w-full border-t border-slate-100 bg-white p-4">
                     <div className="mb-4 flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-blue-600">
                         <Shield size={20} />
@@ -217,7 +220,7 @@ export default function HomePage() {
             >
               <div className="w-48 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl">
                 <div className="mb-3 flex items-center gap-2">
-                  <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+                   <div className="h-2 w-2 rounded-full bg-green-500" style={{ boxShadow: "0 0 0 3px rgba(34,197,94,0.25)" }} />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                     Team Live
                   </span>
@@ -307,7 +310,6 @@ export default function HomePage() {
       </section>
 
       <section className="relative overflow-hidden bg-blue-600 px-6 py-20 text-center text-white">
-        <div className="absolute top-0 left-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-3xl">
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
             Switch to a Private Family Tracking System
