@@ -17,7 +17,7 @@ export default function SiteFooter() {
                 <BrandIcon className="h-6 w-6 text-white" />
               </div> */}
               <span className="text-xl font-black text-slate-900">
-                <img src="/assets/images/famsentrylogo.png" alt="Logo" className="h-28 w-32" />
+                <img src="/assets/images/famsentrylogo.png" alt="Logo" style={{ width: '7rem', height: '65px' }} />
               </span>
             </Link>
           </div>
