@@ -1,15 +1,42 @@
 "use client";
-import React, { useState } from 'react';
-import { ArrowLeft, Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import React, { useRef, useState } from 'react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function ContactPage() {
-    const router = useRouter();
-    const [status, setStatus] = useState<string | null>(null);
+    const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+    const formRef = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("Thank you for contacting us. We'll get back to you shortly.");
+        if (!formRef.current) return;
+        setStatus("sending");
+        const formData = new FormData(formRef.current);
+        const payload = {
+            name: (formData.get('firstName') ?? "").toString().trim(),
+            email: (formData.get('email') ?? "").toString().trim(),
+            message: (formData.get('message') ?? "").toString().trim(),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+
+            if (response.ok) {
+                setStatus("sent");
+                formRef.current?.reset();
+                setTimeout(() => setStatus("idle"), 3000);
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
+
+        console.log(payload);
     };
 
     return (
@@ -39,7 +66,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1">Email Us</h3>
                                     <p className="text-slate-600 mb-1">Our friendly team is here to help.</p>
-                                    <a href="mailto:support@famsentry.com" className="text-blue-600 font-semibold hover:underline">support@famsentry.com</a>
+                                    <a href="mailto:support@famsentry.com" className="text-blue-600 font-semibold hover:underline">hi@mapifyit.com</a>
                                 </div>
                             </div>
 
@@ -50,7 +77,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1">Call Us</h3>
                                     <p className="text-slate-600 mb-1">Mon-Fri from 8am to 5pm.</p>
-                                    <a href="tel:+18005550199" className="text-blue-600 font-semibold hover:underline">+1 (800) 555-0199</a>
+                                    <a href="tel:+18005550199" className="text-blue-600 font-semibold hover:underline">+1 281 980 2206</a>
                                 </div>
                             </div>
 
@@ -70,75 +97,67 @@ export default function ContactPage() {
                     <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
                         <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a message</h2>
 
-                        {status ? (
-                            <div className="bg-green-50 text-green-700 p-4 rounded-xl border border-green-200 mb-6 font-medium text-center">
-                                {status}
+                        {status === "sent" ? (
+                            <div className="bg-green-50 text-green-700 p-8 rounded-3xl border border-green-200 mb-6 font-medium text-center space-y-3 shadow-sm shadow-green-100/50 animate-fade-in">
+                                <div className="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
+                                    <Send className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-xl font-bold text-green-800">Message Sent Successfully!</h3>
+                                <p className="text-green-600 text-sm max-w-sm mx-auto">Thank you for contacting us. Our support team has received your message and will get back to you shortly.</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label htmlFor="firstName" className="text-sm font-semibold text-slate-700">First Name</label>
-                                        <input
-                                            id="firstName"
-                                            type="text"
-                                            required
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                                            placeholder="John"
-                                        />
+                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                                {status === "error" && (
+                                    <div className="bg-red-50 text-red-700 p-4 rounded-xl border border-red-200 font-medium text-center text-sm">
+                                        Failed to send message. Please check your connection and try again.
                                     </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="lastName" className="text-sm font-semibold text-slate-700">Last Name</label>
-                                        <input
-                                            id="lastName"
-                                            type="text"
-                                            required
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                                            placeholder="Doe"
-                                        />
-                                    </div>
+                                )}
+
+                                <div className="space-y-2">
+                                    <label htmlFor="firstName" className="text-sm font-semibold text-slate-700">Full Name</label>
+                                    <input
+                                        id="firstName"
+                                        name="firstName"
+                                        type="text"
+                                        required
+                                        disabled={status === "sending"}
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors disabled:opacity-50"
+                                        placeholder="John Doe"
+                                    />
                                 </div>
 
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="text-sm font-semibold text-slate-700">Email Address</label>
                                     <input
                                         id="email"
+                                        name="email"
                                         type="email"
                                         required
-                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                                        disabled={status === "sending"}
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors disabled:opacity-50"
                                         placeholder="john@example.com"
                                     />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="subject" className="text-sm font-semibold text-slate-700">Subject</label>
-                                    <select
-                                        id="subject"
-                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-slate-700"
-                                    >
-                                        <option value="general">General Inquiry</option>
-                                        <option value="support">Technical Support</option>
-                                        <option value="billing">Billing Question</option>
-                                        <option value="enterprise">Enterprise/Organization Sales</option>
-                                    </select>
                                 </div>
 
                                 <div className="space-y-2">
                                     <label htmlFor="message" className="text-sm font-semibold text-slate-700">Message</label>
                                     <textarea
                                         id="message"
+                                        name="message"
                                         required
                                         rows={4}
-                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors resize-none"
+                                        disabled={status === "sending"}
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors resize-none disabled:opacity-50"
                                         placeholder="How can we help you?"
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                                    disabled={status === "sending"}
+                                    className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
                                 >
-                                    Send Message <Send className="w-4 h-4" />
+                                    {status === "sending" ? "Sending Message..." : "Send Message"} <Send className="w-4 h-4 animate-pulse" />
                                 </button>
                             </form>
                         )}
