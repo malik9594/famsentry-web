@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         Privacy-First Location Tracking
       </h1>
       <p className="mb-16 text-xl leading-relaxed text-slate-500">
-        FamSentry is fundamentally different from apps like Life360 and Google
+        FamSentry is fundamentally different from apps like Google
         Maps. We prioritize your sovereignty over your data.
       </p>
 

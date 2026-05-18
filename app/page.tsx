@@ -8,7 +8,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "FamSentry | Privacy-First Family Tracking Alternative",
   description:
-    "The best private alternative to Life360 and Google Maps. Real-time family safety with independent mapping infrastructure.",
+    "The best private alternative to Google Maps. Real-time family safety with independent mapping infrastructure.",
 };
 
 export default function Home() {

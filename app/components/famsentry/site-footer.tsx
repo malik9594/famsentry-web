@@ -13,11 +13,11 @@ export default function SiteFooter() {
         <div className="col-span-2">
           <div className="mb-6 flex items-center gap-2">
             <Link href="/" prefetch={false} className="flex items-center gap-2">
-              <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
+              {/* <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
                 <BrandIcon className="h-6 w-6 text-white" />
-              </div>
+              </div> */}
               <span className="text-xl font-black text-slate-900">
-                famsentry.com
+                <img src="/assets/images/famsentrylogo.png" alt="Logo" className="h-28 w-32" />
               </span>
             </Link>
           </div>
