@@ -16,17 +16,17 @@ export default function DrivingSafetyPage() {
     <FamsentrySiteShell>
       <div className="bg-white min-h-screen">
         {/* Header Section */}
-        <section className="bg-slate-50 py-24 border-b border-slate-200">
+        <section className="bg-slate-50 py-16 border-b border-slate-200">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4 block">Coaching, Not Spying</span>
                 <h1 className="text-4xl font-black text-slate-900 md:text-7xl mb-8">
                   DriveSentry™ <br />
-                  <span className="text-slate-400">Analytics.</span>
+                  <span className="text-blue-600">Analytics.</span>
                 </h1>
                 <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-                  Real-time telemetry monitoring including hard braking, rapid acceleration, and phone usage. 
+                  Real-time telemetry monitoring including hard braking, rapid acceleration, and phone usage.
                   Generates weekly encrypted "Safety Scores" to help coach teen drivers without compromising their location privacy to insurers.
                 </p>
               </div>
@@ -37,9 +37,29 @@ export default function DrivingSafetyPage() {
                     <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Excellent</span>
                   </div>
                   <div className="relative h-48 w-48 mx-auto mb-8">
+                    <style>{`
+                      @keyframes drawCircle {
+                        from { stroke-dashoffset: 552; }
+                        to { stroke-dashoffset: 33.12; }
+                      }
+                      .animate-draw-circle {
+                        animation: drawCircle 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+                        animation-delay: 0.2s;
+                      }
+                    `}</style>
                     <svg className="w-full h-full transform -rotate-90">
                       <circle cx="96" cy="96" r="88" stroke="currentColor" strokeWidth="16" fill="transparent" className="text-slate-100" />
-                      <circle cx="96" cy="96" r="88" stroke="currentColor" strokeWidth="16" fill="transparent" strokeDasharray={552} strokeDashoffset={552 * (1 - 0.94)} className="text-blue-600" />
+                      <circle 
+                        cx="96" 
+                        cy="96" 
+                        r="88" 
+                        stroke="currentColor" 
+                        strokeWidth="16" 
+                        fill="transparent" 
+                        strokeDasharray={552} 
+                        strokeDashoffset={552} 
+                        className="text-blue-600 animate-draw-circle" 
+                      />
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                       <span className="text-5xl font-black text-slate-900">94</span>
@@ -67,7 +87,7 @@ export default function DrivingSafetyPage() {
         </section>
 
         {/* Feature Grid */}
-        <section className="py-24">
+        <section className="py-18">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[

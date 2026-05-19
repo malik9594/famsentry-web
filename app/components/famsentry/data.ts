@@ -178,85 +178,51 @@ export const valuePropCards: Array<{
     },
   ];
 
-export const comparisonCards = [
+export const famsentryAdvantages = [
   {
-    title: "Best Life360 Alternative",
+    title: "100% Data Sovereignty",
     description:
-      "If you are using Life360, you are relying on a system built around data sharing.",
+      "We own our mapping infrastructure. No third-party APIs handle your data.",
     className: "bg-blue-600 text-white shadow-xl",
     items: [
-      "No data selling",
-      "Independent mapping",
-      "Better privacy architecture",
+      "Independent mapping stack",
+      "No external map requests",
+      "Private server routing",
     ],
   },
   {
-    title: "Better Than Google Maps",
+    title: "Absolute Privacy",
     description:
-      "Google Maps is built for ads, not dedicated family safety.",
+      "Your personal data is never sold, shared, or monetized for ads.",
     className: "bg-slate-900 text-white",
     items: [
-      "Dedicated safety features",
-      "Real-time smart alerts",
-      "Private infrastructure",
+      "No data selling",
+      "Zero-knowledge architecture",
+      "No ad-based monetization",
     ],
   },
   {
-    title: 'The "Find My" Alternative',
+    title: "Cross-Platform Control",
     description:
-      "Escape the closed Apple ecosystem with cross-platform control.",
+      "A unified experience that works perfectly whether you're on Android or iOS.",
     className: "bg-slate-100 text-slate-900",
     items: [
       "Android and iOS parity",
-      "Detailed history logs",
-      "Advanced driving stats",
+      "Seamless group syncing",
+      "Universal dashboard access",
     ],
   },
 ];
 
-export const comparisonRows: Array<{
-  feature: string;
-  famsentry: boolean;
-  life360: boolean;
-  googleMaps: boolean;
-  findMy: boolean;
-}> = [
-    {
-      feature: "Ad-Free Experience",
-      famsentry: true,
-      life360: false,
-      googleMaps: false,
-      findMy: true,
-    },
-    {
-      feature: "Independent Mapping",
-      famsentry: true,
-      life360: false,
-      googleMaps: false,
-      findMy: false,
-    },
-    {
-      feature: "No Data Monetization",
-      famsentry: true,
-      life360: false,
-      googleMaps: false,
-      findMy: true,
-    },
-    {
-      feature: "Enterprise Options",
-      famsentry: true,
-      life360: false,
-      googleMaps: false,
-      findMy: false,
-    },
-    {
-      feature: "Cross-Platform",
-      famsentry: true,
-      life360: true,
-      googleMaps: true,
-      findMy: false,
-    },
-  ];
+export const famsentryFeaturesList = [
+  { feature: "Ad-Free Experience", famsentry: true },
+  { feature: "Independent Mapping", famsentry: true },
+  { feature: "No Data Monetization", famsentry: true },
+  { feature: "Enterprise Options", famsentry: true },
+  { feature: "Cross-Platform Parity", famsentry: true },
+  { feature: "Detailed History Logs", famsentry: true },
+  { feature: "Advanced Driving Stats", famsentry: true },
+];
 
 export const sovereignComparisonRows = [
   {
@@ -335,8 +301,8 @@ export const footerPlatformLinks: FooterLink[] = [
   { label: "Features", href: "/features" },
   { label: "Crash Detection", href: "/features/crash-detection" },
   { label: "Driving Safety", href: "/features/driving-safety" },
-  { label: "Offline Tracking", href: "/features/offline-tracking" },
-  { label: "Diamond Plan", href: "/plans/diamond" },
+  // { label: "Offline Tracking", href: "/features/offline-tracking" },
+  // { label: "Diamond Plan", href: "/plans/diamond" },
   { label: "Pricing", href: "/pricing" },
 ];
 
