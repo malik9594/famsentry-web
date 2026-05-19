@@ -89,7 +89,7 @@ export default function PricingPage() {
                     </p>
                 </header>
 
-                <section className="mb-20" aria-labelledby="pricing-plans-heading">
+                <section className="mb-16" aria-labelledby="pricing-plans-heading">
                     <h2 id="pricing-plans-heading" className="sr-only">Our Pricing Plans</h2>
                     {/* <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"> */}
                     <div className="grid md:grid-cols-1 justify-items-center gap-6 lg:gap-8 max-w-6xl mx-auto">
