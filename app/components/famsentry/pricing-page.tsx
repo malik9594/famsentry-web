@@ -80,7 +80,7 @@ export default function PricingPage() {
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 mb-6">
                         <Shield className="w-3.5 h-3.5" /> Family Safety Plans
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 leading-tight">
                         Protect your family. <br />
                         <span className="text-blue-600">Secure your data.</span>
                     </h1>
@@ -102,14 +102,14 @@ export default function PricingPage() {
                             icon={Navigation}
                             features={["Real-time Location Sharing", "2 Days Location History", "2 Safe Zones (Geofences)", "SOS Emergency Alerts", "Battery Monitoring"]}
                         /> */}
-                        <PricingCard
+                        {/* <PricingCard
                             title="Premium"
                             price="$9.99"
                             highlightedText="Most Popular"
                             description="Advanced features for active families."
                             icon={Target}
                             features={["30 Days Location History", "Unlimited Safe Zones", "Crime & Safety Reports", "Basic Driving Analytics", "Individual Speed Alerts", "Priority Sync"]}
-                        />
+                        /> */}
                         {/* <PricingCard
                             title="Diamond"
                             price="$19.99"
@@ -120,15 +120,136 @@ export default function PricingPage() {
                             features={["365 Days Location History", "ImpactGuard™ Crash Detection", "DriveSentry™ Advanced Analytics", "Ghost-Sync Offline Tracking", "Priority Server Routing", "24/7 Priority Support"]}
                         /> */}
                     </div>
+                    <div className="w-full">
+                        <div className="bg-white rounded-[40px] border border-slate-200 p-8 md:p-12 lg:p-16 shadow-2xl shadow-slate-100/50 hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] hover:border-slate-300 transition-all duration-700 relative overflow-hidden group">
+                            {/* Premium Top Gradient Line */}
+                            <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600" />
+
+                            <div className="grid lg:grid-cols-12 gap-12 items-center">
+
+                                {/* Left Side: Pricing Info & CTA */}
+                                <div className="lg:col-span-5 flex flex-col justify-center">
+                                    <span className="inline-flex self-start bg-blue-100 text-blue-700 text-xs uppercase font-extrabold px-4 py-1.5 rounded-full tracking-wider mb-6">
+                                        Premium Safety Tier
+                                    </span>
+                                    <h3 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+                                        Complete Family Coverage
+                                    </h3>
+                                    <p className="text-slate-500 text-sm mb-8 leading-relaxed">
+                                        Access military-grade private tracking, advanced behavior analytics, and unlimited geofencing.
+                                    </p>
+
+                                    <div className="mb-8">
+                                        <div className="flex items-baseline gap-2">
+                                            <span className="text-6xl font-black text-slate-900 tracking-tight">$9.99</span>
+                                            <span className="text-slate-400 font-medium text-lg">/month</span>
+                                        </div>
+                                        <p className="text-xs text-slate-400 mt-2 font-medium">No binding contracts. Cancel anytime with a single click.</p>
+                                    </div>
+
+                                    <Link
+                                        href="/pricing"
+                                        prefetch={false}
+                                        className="w-full py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold rounded-2xl text-center shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 group/btn"
+                                    >
+                                        Activate Premium Protection
+                                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                                    </Link>
+                                </div>
+
+                                {/* Divider Line */}
+                                <div className="hidden lg:block lg:col-span-1 h-72 w-px bg-slate-100 mx-auto" />
+
+                                {/* Right Side: Features */}
+                                <div className="lg:col-span-6">
+                                    <h4 className="text-xs uppercase font-black tracking-widest text-slate-400 mb-6">
+                                        What&apos;s Included in Premium
+                                    </h4>
+
+                                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">30-Day Timeline</p>
+                                                <p className="text-slate-400 text-xs">Full history log of movement.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">Unlimited Safe Zones</p>
+                                                <p className="text-slate-400 text-xs">Instant entry &amp; exit alerts.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">Driving Safety Reports</p>
+                                                <p className="text-slate-400 text-xs">Monitor speed &amp; behaviors.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">Crime &amp; Safety Alerts</p>
+                                                <p className="text-slate-400 text-xs">Real-time local hazard alerts.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">Priority Ghost-Sync</p>
+                                                <p className="text-slate-400 text-xs">Ultra low-latency coordinates.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                                <Check className="w-4 h-4 font-bold" />
+                                            </div>
+                                            <div>
+                                                <p className="text-slate-800 text-sm font-bold">Cross-Platform Sync</p>
+                                                <p className="text-slate-400 text-xs">Android &amp; iOS parity.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 mt-8 flex items-center gap-3">
+                                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shrink-0">
+                                            <Shield className="w-4.5 h-4.5" />
+                                        </span>
+                                        <p className="text-slate-500 text-xs leading-normal">
+                                            <strong>Privacy First:</strong> Location tracking operates strictly on independent mapping endpoints. No third-party Map SDKs can see or access your routes.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section className="mb-20">
+                <section className="mb-16">
                     <div className="bg-slate-900 rounded-[40px] p-10 md:p-16 relative overflow-hidden text-center text-white">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 blur-3xl rounded-full" />
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full" />
 
                         <div className="relative z-10 max-w-3xl mx-auto">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6">Need a custom plan for a larger organization?</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold mb-6">Need a custom plan for a larger organization?</h2>
                             <p className="text-lg text-slate-400 mb-10">We offer specialized solutions for extended families, groups, and enterprises that require private location infrastructure.</p>
                             <Link href="/contact-us" prefetch={false} className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-slate-900 font-extrabold rounded-2xl hover:bg-slate-100 hover:scale-105 active:scale-95 transition-all shadow-xl">
                                 Contact Us <ArrowRight className="w-5 h-5" />

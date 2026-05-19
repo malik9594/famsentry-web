@@ -23,7 +23,7 @@ export default function SiteHeader() {
           {/* <div className="rounded-lg bg-blue-600 p-1.5 shadow-lg shadow-blue-200">
           </div> */}
           <span className="text-lg font-black tracking-tight text-slate-900">
-            <img src="/assets/images/famsentrylogo.png" alt="Logo" style={{ width: '7rem', height: '65px' }} />
+            <img src="/assets/images/famsentrylogo.png" alt="Logo" style={{ width: '8rem', height: '65px' }} />
           </span>
         </Link>
 
