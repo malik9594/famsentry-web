@@ -65,3 +65,257 @@
     transform: translateY(0);
   }
 }
+
+.adminLogin {
+  animation: adminLoginStory 12s ease-in-out infinite;
+}
+
+.registerFamily {
+  animation: registerFamilyStory 12s ease-in-out infinite;
+}
+
+.mapStatus {
+  animation: mapStatusStory 12s ease-in-out infinite;
+}
+
+.adminPin {
+  animation: adminPinStory 12s ease-in-out infinite;
+}
+
+.familyMoveOne {
+  animation: familyOneStory 12s ease-in-out infinite;
+}
+
+.familyMoveTwo {
+  animation: familyTwoStory 12s ease-in-out infinite;
+}
+
+.familyMoveThree {
+  animation: familyThreeStory 12s ease-in-out infinite;
+}
+
+.familyMoveFour {
+  animation: familyFourStory 12s ease-in-out infinite;
+}
+
+.familyMoveFive {
+  animation: familyFiveStory 12s ease-in-out infinite;
+}
+
+.livePulse {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes adminLoginStory {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  8%,
+  22% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  30%,
+  100% {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.96);
+  }
+}
+
+@keyframes registerFamilyStory {
+
+  0%,
+  28% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  36%,
+  52% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  60%,
+  100% {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.96);
+  }
+}
+
+@keyframes mapStatusStory {
+
+  0%,
+  55% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  65%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes adminPinStory {
+
+  0%,
+  55% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  65%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes familyOneStory {
+
+  0%,
+  55% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  82% {
+    opacity: 1;
+    transform: translate(45px, 28px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(80px, -18px) scale(1);
+  }
+}
+
+@keyframes familyTwoStory {
+
+  0%,
+  58% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  84% {
+    opacity: 1;
+    transform: translate(-50px, -25px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-85px, 18px) scale(1);
+  }
+}
+
+@keyframes familyThreeStory {
+
+  0%,
+  61% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  71% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  86% {
+    opacity: 1;
+    transform: translate(35px, -38px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(70px, -8px) scale(1);
+  }
+}
+
+@keyframes familyFourStory {
+  0%,
+  64% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  74% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  88% {
+    opacity: 1;
+    transform: translate(-40px, 35px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-75px, -15px) scale(1);
+  }
+}
+
+@keyframes familyFiveStory {
+  0%,
+  67% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  77% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translate(30px, -20px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(65px, 20px) scale(1);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35);
+  }
+
+  100% {
+    box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .adminLogin,
+  .registerFamily,
+  .mapStatus,
+  .adminPin,
+  .familyMoveOne,
+  .familyMoveTwo,
+  .familyMoveThree,
+  .familyMoveFour,
+  .familyMoveFive,
+  .livePulse {
+    animation: none !important;
+  }
+}

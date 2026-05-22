@@ -16,6 +16,11 @@ import styles from "./home-page.module.css";
 
 export default function HomePage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [loopCount, setLoopCount] = useState<number>(0);
+
+  const allPossibleMembers = ["MOM", "DAD", "SIS", "BRO", "DOG"];
+  const memberCount = 3 + (loopCount % 3); // Cycles through 3, 4, 5
+  const currentMembers = allPossibleMembers.slice(0, memberCount);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -60,114 +65,42 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative flex h-[500px] items-center justify-center md:h-[650px]">
-            <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible">
-              <path
-                d="M 150,150 Q 250,50 450,150"
-                fill="none"
-                stroke="#2563eb"
-                strokeWidth="2"
-                strokeDasharray="8,8"
-                strokeDashoffset="100"
-                className={styles.pathOne}
-              />
-              <path
-                d="M 50,450 Q 200,350 400,450"
-                fill="none"
-                stroke="#2563eb"
-                strokeWidth="2"
-                strokeDasharray="8,8"
-                strokeDashoffset="200"
-                className={styles.pathTwo}
-              />
-            </svg>
+          <div className="relative flex justify-center items-center mt-12 md:mt-0">
+            {/* Decorative background glow */}
+            <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className={`${styles.drift} absolute top-1/2 left-1/4 z-30`}>
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="#ef4444"
-                className="drop-shadow-lg"
-              >
-                <path
-                  d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+            <div className="group relative z-20 rotate-3 transform transition-all duration-700 hover:rotate-0 hover:scale-[1.02]">
+              {/* Phone Shadow Background */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-[3.8rem] opacity-20 blur-xl group-hover:opacity-35 transition-opacity" />
 
-            <div
-              className={`${styles.float} absolute top-[10%] right-[10%] z-40`}
-              style={{ animationDelay: "0.5s" }}
-            >
-              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-pink-500 text-[10px] font-bold text-white">
-                  SIS
+              {/* The Phone Mockup Frame */}
+              <div className="relative h-[590px] w-[290px] overflow-hidden rounded-[3.5rem] border-[6px] border-white bg-blue-600 p-3 shadow-[0_50px_100px_-20px_rgba(37,99,235,0.35)]">
+                {/* Notch / Dynamic Island */}
+                <div className="absolute top-5 left-1/2 -translate-x-1/2 h-5 w-24 bg-black rounded-full z-50 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-slate-900/80 ml-auto mr-3 border border-slate-800/40" />
                 </div>
-                <div>
-                  <p className="text-xs leading-none font-bold text-slate-800">
-                    Sis
-                  </p>
-                  <p className="mt-1 text-[10px] text-slate-400">
-                    Leaving now! - 09:30
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div
-              className={`${styles.float} absolute top-[25%] left-[5%] z-40`}
-              style={{ animationDelay: "1.2s" }}
-            >
-              <div className="flex min-w-[160px] items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
-                  DAD
-                </div>
-                <div>
-                  <p className="text-xs leading-none font-bold text-slate-800">
-                    Dad
-                  </p>
-                  <p className="mt-1 text-[10px] text-slate-400">
-                    Ok done!! - 08:15
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative z-20 rotate-3 transform transition-transform duration-700 hover:rotate-0">
-              <div className="pointer-events-none absolute -right-20 -bottom-20 h-[400px] w-[400px] opacity-10 transition-transform duration-1000 group-hover:scale-105">
-                <svg viewBox="0 0 200 200" fill="currentColor" className="text-slate-900">
-                  <path d="M150,150 Q130,120 110,130 Q90,140 80,120 Q70,100 90,80 Q110,60 130,70 Q150,80 160,110 Z" />
-                </svg>
-              </div>
-
-              <div className="relative h-[580px] w-[280px] overflow-hidden rounded-[3.5rem] border-[6px] border-white bg-blue-600 p-3 shadow-[0_50px_100px_-20px_rgba(37,99,235,0.3)]">
-                <div className="relative h-full w-full overflow-hidden rounded-[2.8rem] bg-white shadow-inner">
-                  <div className="absolute top-0 flex w-full items-center justify-between p-4 text-[10px] font-black text-slate-300">
+                {/* Inner Screen */}
+                <div className="relative h-full w-full overflow-hidden rounded-[2.8rem] bg-white shadow-inner flex flex-col">
+                  {/* Status Bar */}
+                  <div className="absolute top-0 flex w-full items-center justify-between px-6 pt-5 pb-2 text-[10px] font-black text-slate-400 z-40 bg-gradient-to-b from-white via-white/80 to-transparent">
                     <span>9:41</span>
                     <div className="flex items-center gap-1.5">
-                      <div className="h-2 w-4 rounded-sm bg-slate-200" />
-                      <Shield size={10} className="text-blue-200" />
+                      <div className="h-2 w-3.5 rounded-sm bg-slate-300" />
+                      <Shield size={10} className="text-blue-500 animate-pulse" />
                     </div>
                   </div>
 
-                  <div className="relative mt-12 h-[340px] overflow-hidden bg-blue-50/50">
-                    <div className="absolute inset-0 opacity-10">
+                  {/* Inside Screen Content (The Map container!) */}
+                  <div className="relative flex-1 overflow-hidden bg-slate-50">
+                    {/* Map Grid */}
+                    <div className="absolute inset-0 opacity-15">
                       <svg width="100%" height="100%">
-                        <pattern
-                          id="grid"
-                          width="20"
-                          height="20"
-                          patternUnits="userSpaceOnUse"
-                        >
+                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
                           <path
                             d="M 20 0 L 0 0 0 20"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#3b82f6"
                             strokeWidth="0.5"
                           />
                         </pattern>
@@ -175,35 +108,108 @@ export default function HomePage() {
                       </svg>
                     </div>
 
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                      <div className="relative">
-                        <div
-                          className="absolute inset-0 rounded-full bg-blue-500/20"
-                          style={{ boxShadow: "0 0 0 8px rgba(59,130,246,0.12), 0 0 0 16px rgba(59,130,246,0.06)" }}
-                        />
-                        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-blue-600 shadow-lg">
-                          <User size={24} />
+                    {/* Step 1: Admin Login */}
+                    <div
+                      className={`${styles.adminLogin} absolute top-14 left-4 right-4 z-40 rounded-2xl bg-white/90 backdrop-blur-md p-3.5 border border-white/20 shadow-xl`}
+                      onAnimationIteration={() => setLoopCount((prev) => prev + 1)}
+                    >
+                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-slate-400">
+                        Admin Login
+                      </p>
+                      <div className="mt-2.5 flex items-center gap-3">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-[10px] font-black text-white shadow-md shadow-blue-500/20">
+                          ADM
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-slate-800">Admin signed in</p>
+                          <p className="text-[9px] font-bold text-green-500">
+                            Secure session started
+                          </p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="absolute top-1/4 right-1/4">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-red-500 text-white shadow-md">
-                        <MapPin size={16} />
+                    {/* Step 2: Register Family */}
+                    <div className={`${styles.registerFamily} absolute top-14 left-4 right-4 z-40 rounded-2xl bg-white/90 backdrop-blur-md p-3.5 border border-white/20 shadow-xl`}>
+                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-slate-400">
+                        Register Family
+                      </p>
+                      <div className="mt-2.5 flex -space-x-2">
+                        {currentMembers.map((member) => (
+                          <div
+                            key={member}
+                            className="flex h-8.5 w-8.5 items-center justify-center rounded-full border-2 border-white bg-blue-600 text-[8px] font-black text-white shadow-md shadow-blue-500/20"
+                          >
+                            {member}
+                          </div>
+                        ))}
+                      </div>
+                      <p className="mt-2.5 text-[9px] font-bold text-green-500">
+                        {currentMembers.length} members added to family circle
+                      </p>
+                    </div>
+
+                    {/* Step 3: Map Status */}
+                    <div className={`${styles.mapStatus} absolute top-14 left-4 z-30 rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 border border-white/20 shadow-md`}>
+                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-green-500">
+                        Family Live on Map
+                      </p>
+                    </div>
+
+                    {/* Admin Main Pin */}
+                    <div className={`${styles.adminPin} absolute top-[45%] left-[45%] z-30`}>
+                      <div className={`${styles.livePulse} flex h-11 w-11 items-center justify-center rounded-full bg-slate-900 text-[9px] font-black text-white shadow-lg`}>
+                        ADM
                       </div>
                     </div>
+
+                    {/* Family Moving Pins */}
+                    <div className={`${styles.familyMoveOne} absolute top-[28%] left-[28%] z-30`}>
+                      <div className={`${styles.livePulse} flex h-9 w-9 items-center justify-center rounded-full bg-pink-500 text-[8px] font-black text-white shadow-lg`}>
+                        MOM
+                      </div>
+                    </div>
+
+                    <div className={`${styles.familyMoveTwo} absolute top-[52%] left-[62%] z-30`}>
+                      <div className={`${styles.livePulse} flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-[8px] font-black text-white shadow-lg`}>
+                        DAD
+                      </div>
+                    </div>
+
+                    <div className={`${styles.familyMoveThree} absolute top-[68%] left-[32%] z-30`}>
+                      <div className={`${styles.livePulse} flex h-9 w-9 items-center justify-center rounded-full bg-purple-500 text-[8px] font-black text-white shadow-lg`}>
+                        SIS
+                      </div>
+                    </div>
+
+                    {currentMembers.includes("BRO") && (
+                      <div className={`${styles.familyMoveFour} absolute top-[38%] left-[68%] z-30`}>
+                        <div className={`${styles.livePulse} flex h-9 w-9 items-center justify-center rounded-full bg-teal-500 text-[8px] font-black text-white shadow-lg`}>
+                          BRO
+                        </div>
+                      </div>
+                    )}
+
+                    {currentMembers.includes("DOG") && (
+                      <div className={`${styles.familyMoveFive} absolute top-[58%] left-[20%] z-30`}>
+                        <div className={`${styles.livePulse} flex h-9 w-9 items-center justify-center rounded-full bg-amber-500 text-[8px] font-black text-white shadow-lg`}>
+                          DOG
+                        </div>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="absolute bottom-0 w-full border-t border-slate-100 bg-white p-4">
+                  {/* Bottom Action Tab */}
+                  <div className="border-t border-slate-100 bg-white p-4.5 pb-6">
                     <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-blue-600">
-                        <Shield size={20} />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 shadow-inner animate-pulse">
+                        <Shield size={20} className="stroke-[2.5]" />
                       </div>
                       <div>
-                        <p className="text-xs leading-none font-bold text-slate-800">
+                        <p className="text-xs leading-none font-extrabold text-slate-800">
                           Privacy Shield
                         </p>
-                        <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-green-500">
+                        <p className="mt-1.5 text-[9px] font-bold uppercase tracking-wider text-green-500">
                           Active &amp; Secure
                         </p>
                       </div>
@@ -212,7 +218,7 @@ export default function HomePage() {
                       {bottomActionIcons.map((Icon) => (
                         <div
                           key={Icon.displayName ?? Icon.name}
-                          className="flex aspect-square items-center justify-center rounded-lg bg-slate-50 text-slate-400 transition-colors hover:text-blue-600"
+                          className="flex aspect-square items-center justify-center rounded-xl bg-slate-50 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600"
                         >
                           <Icon size={16} />
                         </div>
@@ -223,20 +229,47 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Floating Card: Sovereign Circle */}
             <div
-              className={`${styles.float} absolute right-[-1rem] bottom-10 z-30 md:right-[-2.5rem]`}
+              className={`${styles.float} absolute right-[-2rem] bottom-12 z-30 hidden sm:block`}
               style={{ animationDelay: "1.8s" }}
             >
-              <div className="w-48 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500" style={{ boxShadow: "0 0 0 3px rgba(34,197,94,0.25)" }} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                    Team Live
-                  </span>
+              <div className="w-48 rounded-2xl border border-slate-100/80 bg-white/95 backdrop-blur-md p-4 shadow-2xl shadow-blue-500/10">
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                      Sovereign Circle
+                    </span>
+                  </div>
+                  <span className="text-[8px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-extrabold">Active</span>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-2 w-full rounded-full bg-slate-100" />
-                  <div className="h-2 w-2/3 rounded-full bg-slate-100" />
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Secure Links:</span>
+                    <span className="font-mono text-slate-600 font-semibold">3 Active</span>
+                  </div>
+                  <div className="h-1.5 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-r from-blue-500 to-indigo-500 animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Card: Zero-Trust */}
+            <div
+              className={`${styles.float} absolute left-[-2.5rem] top-[25%] z-30 hidden lg:block`}
+              style={{ animationDelay: "0.5s" }}
+            >
+              <div className="w-40 rounded-2xl border border-slate-100/80 bg-white/95 backdrop-blur-md p-3.5 shadow-2xl shadow-slate-900/5">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-blue-600 shadow-inner">
+                    <Shield size={14} className="stroke-[2.5]" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-slate-800 uppercase tracking-tight">Zero-Trust</p>
+                    <p className="text-[8px] font-bold text-slate-400">100% Encrypted</p>
+                  </div>
                 </div>
               </div>
             </div>
