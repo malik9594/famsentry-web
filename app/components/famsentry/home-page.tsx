@@ -28,7 +28,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative mx-auto max-w-7xl overflow-hidden px-6 pt-1 pb-1 md:pt-1 md:pb-5">
+      <section className="relative mx-auto max-w-7xl px-6 pt-1 pb-1 md:pt-1 md:pb-5">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="z-5 text-center md:text-left">
             <h1
@@ -113,16 +113,16 @@ export default function HomePage() {
                       className={`${styles.adminLogin} absolute top-14 left-4 right-4 z-40 rounded-2xl bg-white/90 backdrop-blur-md p-3.5 border border-white/20 shadow-xl`}
                       onAnimationIteration={() => setLoopCount((prev) => prev + 1)}
                     >
-                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-slate-400">
+                      <p className="text-[10px] font-bold uppercase text-black-600">
                         Admin Login
                       </p>
                       <div className="mt-2.5 flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-[10px] font-black text-white shadow-md shadow-blue-500/20">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white shadow-md shadow-blue-500/20">
                           ADM
                         </div>
                         <div>
                           <p className="text-xs font-bold text-slate-800">Admin signed in</p>
-                          <p className="text-[9px] font-bold text-green-500">
+                          <p className="text-[10px] font-bold text-green-500">
                             Secure session started
                           </p>
                         </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
 
                     {/* Step 2: Register Family */}
                     <div className={`${styles.registerFamily} absolute top-14 left-4 right-4 z-40 rounded-2xl bg-white/90 backdrop-blur-md p-3.5 border border-white/20 shadow-xl`}>
-                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-slate-400">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-black-600">
                         Register Family
                       </p>
                       <div className="mt-2.5 flex -space-x-2">
@@ -144,7 +144,7 @@ export default function HomePage() {
                           </div>
                         ))}
                       </div>
-                      <p className="mt-2.5 text-[9px] font-bold text-green-500">
+                      <p className="mt-2.5 text-[10px] font-bold text-green-500">
                         {currentMembers.length} members added to family circle
                       </p>
                     </div>
@@ -234,18 +234,18 @@ export default function HomePage() {
               className={`${styles.float} absolute right-[-2rem] bottom-12 z-30 hidden sm:block`}
               style={{ animationDelay: "1.8s" }}
             >
-              <div className="w-48 rounded-2xl border border-slate-100/80 bg-white/95 backdrop-blur-md p-4 shadow-2xl shadow-blue-500/10">
-                <div className="mb-3 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+              <div className="w-40 rounded-2xl border border-slate-100/80 bg-white/95 backdrop-blur-md p-3 shadow-2xl shadow-blue-500/10">
+                <div className="mb-2 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-500">
                       Sovereign Circle
                     </span>
                   </div>
                   <span className="text-[8px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-extrabold">Active</span>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs">
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between text-[10px]">
                     <span className="text-slate-400">Secure Links:</span>
                     <span className="font-mono text-slate-600 font-semibold">3 Active</span>
                   </div>
